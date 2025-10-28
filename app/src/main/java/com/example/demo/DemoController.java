@@ -15,9 +15,9 @@ public class DemoController {
     @GetMapping("/hello")
     public Map<String, Object> hello() {
         Map<String, Object> response = new HashMap<>();
-        response.put("message", "Hello from Spring Boot on EKS - CI/CD Automated!");
+        response.put("message", "Hello from Spring Boot on EKS - Fully Automated CI/CD!");
         response.put("timestamp", LocalDateTime.now().toString());
-        response.put("version", "1.0.0");
+        response.put("version", "1.0.1");
         response.put("environment", "production");
         return response;
     }
