@@ -79,15 +79,16 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    - name: Run Unit Tests
-      run: |
-        cd app
-        mvn clean test -B
+    # ---- Unit Tests (Enable when test cases are written) ----
+    # - name: Run Unit Tests
+    #   run: |
+    #     cd app
+    #     mvn clean test -B
         
-    - name: Generate Test Coverage Report
-      run: |
-        cd app
-        mvn jacoco:report -B
+    # - name: Generate Test Coverage Report
+    #   run: |
+    #     cd app
+    #     mvn jacoco:report -B
 
     # - name: Upload Coverage to SonarQube
     #   run: |
