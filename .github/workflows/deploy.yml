@@ -57,15 +57,11 @@ jobs:
 
     - name: Deploy to EKS
       env:
-        IMAGE: ${{ steps.build-image.outputs.image }}
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
       run: |
-        # Update deployment image
-        kubectl set image deployment/devops-practice-app app=$IMAGE -n default
-        
-        # Apply all manifests
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
-        kubectl apply -f k8s/ingress.yaml
+        # Update deployment image with specific commit SHA tag
+        kubectl set image deployment/devops-practice-app app=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -n default
         
         # Wait for rollout to complete
         kubectl rollout status deployment/devops-practice-app -n default --timeout=5m
