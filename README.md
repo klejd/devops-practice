@@ -272,3 +272,5 @@ For issues or questions:
 **Status**: Infrastructure deployed, application code ready, awaiting Docker build and first deployment.
 
 **Next Action**: Restart computer → Start Docker Desktop → Build & push image → Deploy to EKS → Setup GitHub CI/CD
+#   C I / C D   T e s t  
+ 
