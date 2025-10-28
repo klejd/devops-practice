@@ -15,10 +15,11 @@ public class DemoController {
     @GetMapping("/hello")
     public Map<String, Object> hello() {
         Map<String, Object> response = new HashMap<>();
-        response.put("message", "Hello from Spring Boot on EKS - Fully Automated CI/CD!");
+        response.put("message", "🚀 Automated CI/CD Pipeline Working!");
         response.put("timestamp", LocalDateTime.now().toString());
-        response.put("version", "1.0.1");
+        response.put("version", "1.0.2");
         response.put("environment", "production");
+        response.put("deployedBy", "GitHub Actions");
         return response;
     }
 
